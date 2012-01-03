@@ -1,0 +1,153 @@
+" Pathogen
+call pathogen#infect()
+
+set encoding=utf-8
+filetype plugin indent on
+
+
+" Interface
+" ==========================================================
+
+if has("gui_running")
+  set guioptions=e-t " Remove the toolbar
+  set lines=43
+  set columns=90
+endif
+
+set colorcolumn=80
+set textwidth=80
+
+syntax on
+colorscheme solarized
+set background=dark
+set guifont=Monaco:h11
+set cursorline
+set number " Show line number
+set numberwidth=4
+set ruler " Show cursor position
+set lsp=4 " Augmente l'interlignage
+
+
+" General
+" ==========================================================
+
+set grepprg=ack " Use ack instead of grep for searching
+set noerrorbells  " No noise.
+set nocompatible
+set autochdir " Switch to the current file directory
+set hidden " Change buffers without saving
+set backup
+set backupdir=~/.vim/backup " Where to put backup files
+set directory=~/.vim/tmp " Directory to place swap files in
+set showmatch
+set spelllang=en,fr
+set spellsuggest=5
+set backspace=indent,eol,start
+set showcmd
+set showmode
+set listchars=trail:.,tab:>-,eol:$
+set nolist
+
+" Tabs & Spaces
+set expandtab
+set sw=4
+set ts=4
+set sts=4
+set autoindent
+au FileType ruby,coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Avoid trailing whitespace.
+au BufWritePre * :%s/\s\+$//e
+
+" Enhanced command line completion
+set wildmenu
+set wildmode=list:longest
+
+" Searching
+set hlsearch  " highlight search
+set incsearch " incremental search, search as you type
+set ignorecase
+set smartcase
+
+
+" Mappings
+" ==========================================================
+
+let mapleader= ","
+set tm=300
+
+imap jj <Esc>
+
+imap uu _
+imap hh =>
+imap aa @
+
+imap () ()<Left>
+imap {} {}<Left>
+imap [] []<Left>
+imap '' ''<Left>
+imap "" ""<Left>
+
+imap (); ();<Left><Left>
+
+" Toggle invisible chars
+:noremap <leader>i :set list!<CR>
+
+" Toggle spell checking
+nmap <silent> <leader>s :set spell!<CR>
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" Changing focus between windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Indentation
+vmap < <gv
+vmap > >gv
+
+" Get off my lawn
+nnoremap <Left>  :echoe "Use H"<CR>
+nnoremap <Right> :echoe "Use L"<CR>
+nnoremap <Up>    :echoe "Use K"<CR>
+nnoremap <Down>  :echoe "Use J"<CR>
+
+" NERDTree
+noremap <silent> <leader>n :NERDTreeToggle<CR>
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+
+" Omnicompletion
+" words
+inoremap <leader>, <C-x><C-o>
+" filenames
+inoremap <leader>: <C-x><C-f>
+" lines
+inoremap <leader>= <C-x><C-l>
+
+" Misc
+" ==========================================================
+
+let NERDTreeMouseMode=1
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Syntastic
+" let g:syntastic_auto_jump=1
+" let g:syntastic_auto_loc_list=1
+set statusline+=%#warningmsg#
+set statusline+=%*
+
+" Reload .vimrc when we edit it
+au! BufWritePost .vimrc source %

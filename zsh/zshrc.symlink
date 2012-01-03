@@ -1,0 +1,32 @@
+export ZSH="$HOME/.dotfiles"
+export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:$PATH"
+
+# Completion
+autoload -U compinit
+compinit
+
+
+export EDITOR="mvim"
+
+autoload -U colors
+colors
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
+
+setopt AUTOCD
+setopt CORRECT CORRECT_ALL
+setopt HISTIGNOREDUPS
+
+setopt COMPLETE_ALIASES
+
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
+for config_file ($ZSH/**/*.zsh) source $config_file
+
+if $(grc &>/dev/null)
+then
+  source `brew --prefix`/etc/grc.bashrc
+fi
+
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
