@@ -4,7 +4,7 @@ alias mkdir="mkdir -p"
 alias ls='ls -la'
 
 alias d="cd ~/Documents/Dropbox"
-alias p="cd ~/Projects"
+alias p="cd ~/Projets"
 
 alias m="mate"
 alias m.="mate ."
