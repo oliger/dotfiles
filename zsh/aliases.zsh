@@ -1,8 +1,6 @@
 alias ...="../.."
 alias mkdir="mkdir -p"
 
-alias ls='ls -la'
-
 alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/Projets"
 

@@ -9,7 +9,7 @@ local indicator="%(?,$,%{$fg[red]%}$%{$reset_color%})"
 
 # Display the current git branch
 git_branch() {
-  echo "%{$fg[white]%}$(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})%{$reset_color%}"
+  echo "$(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})"
 }
 
 git_status() {
@@ -28,7 +28,5 @@ git_status() {
 }
 
 PROMPT='
-%~
+$(git_status) %~ on $(git_branch)
 ${indicator} %{$reset_color%}'
-
-RPROMPT='$(git_status)$(git_branch)'
