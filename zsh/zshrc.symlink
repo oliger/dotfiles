@@ -5,11 +5,8 @@ export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:$PATH"
 autoload -U compinit
 compinit
 
-
 export EDITOR="mvim"
 
-autoload -U colors
-colors
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
