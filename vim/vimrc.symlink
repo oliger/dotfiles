@@ -20,12 +20,12 @@ set textwidth=80
 syntax on
 colorscheme solarized
 set background=dark
-set guifont=Monaco:h11
+set guifont=Monaco\ for\ Powerline:h13
 set cursorline
 set number " Show line number
 set numberwidth=4
+set lsp=4
 set ruler " Show cursor position
-set lsp=4 " Augmente l'interlignage
 
 
 " General
@@ -145,8 +145,14 @@ let g:html_indent_tags = 'li\|p'
 " Syntastic
 " let g:syntastic_auto_jump=1
 " let g:syntastic_auto_loc_list=1
+
+
+"let g:Powerline_symbols='fancy'
+set laststatus=2
+
 set statusline+=%#warningmsg#
 set statusline+=%*
+
 
 " Reload .vimrc when we edit it
 au! BufWritePost .vimrc source %
