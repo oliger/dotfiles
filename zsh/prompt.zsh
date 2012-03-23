@@ -5,7 +5,7 @@ setopt prompt_subst
 autoload -U colors && colors
 
 # If command fail, indicator become red.
-local indicator="%(?,$,%{$fg[red]%}$%{$reset_color%})"
+local indicator="%(?,⚡,%{$fg[red]%}⚡%{$reset_color%})"
 
 # Display the current git branch
 git_branch() {
