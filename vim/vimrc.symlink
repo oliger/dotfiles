@@ -20,7 +20,7 @@ set textwidth=80
 syntax on
 colorscheme solarized
 set background=dark
-set guifont=Monaco\ for\ Powerline:h13
+set guifont=Menlo:h12
 set cursorline
 set number " Show line number
 set numberwidth=4
