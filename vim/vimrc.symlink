@@ -36,9 +36,6 @@ set noerrorbells  " No noise.
 set nocompatible
 set autochdir " Switch to the current file directory
 set hidden " Change buffers without saving
-set backup
-set backupdir=~/.vim/backup " Where to put backup files
-set directory=~/.vim/tmp " Directory to place swap files in
 set showmatch
 set spelllang=en,fr
 set spellsuggest=5
@@ -47,6 +44,8 @@ set showcmd
 set showmode
 set listchars=trail:.,tab:>-,eol:$
 set nolist
+set nobackup
+set noswapfile
 
 " Tabs & Spaces
 set expandtab
