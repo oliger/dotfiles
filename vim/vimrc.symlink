@@ -142,11 +142,10 @@ let NERDTreeMouseMode=1
 let g:html_indent_tags = 'li\|p'
 
 " Syntastic
-" let g:syntastic_auto_jump=1
-" let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_jump=0
+let g:syntastic_auto_loc_list=2
 
-
-"let g:Powerline_symbols='fancy'
 set laststatus=2
 
 set statusline+=%#warningmsg#
