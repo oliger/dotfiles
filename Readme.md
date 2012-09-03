@@ -15,7 +15,7 @@ First, run the following command.
     git clone git://github.com/oliger/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     rake install
-    git submodule update
+    git submodule update --init
 
 Then, change the `.gitconfig` to not commit as me.
 
