@@ -91,3 +91,6 @@
 [submodule "vim/vim.symlink/bundle/CSScomb"]
 	path = vim/vim.symlink/bundle/CSScomb
 	url = https://github.com/miripiruni/CSScomb-for-Vim.git
+[submodule "vim/vim.symlink/bundle/editorconfig"]
+	path = vim/vim.symlink/bundle/editorconfig
+	url = git@github.com:editorconfig/editorconfig-vim.git
