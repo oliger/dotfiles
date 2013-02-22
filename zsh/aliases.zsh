@@ -1,11 +1,8 @@
 alias ...="../.."
 alias mkdir="mkdir -p"
 
-alias d="cd ~/Documents/Dropbox"
-alias p="cd ~/Projets"
-
-alias m="mate"
-alias m.="mate ."
+alias d="cd ~/Dropbox"
+alias h="cd ~/hull"
 
 alias v="mvim"
 alias v.="mvim ."
