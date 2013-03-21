@@ -1,7 +1,7 @@
 export ZSH="$HOME/.dotfiles"
-export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:$PATH"
+export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/heroku/bin:$HOME/.rvm/bin:$PATH"
 export PAGER="less"
-export EDITOR="mvim"
+export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 
 # Completion
 autoload -U compinit
@@ -28,5 +28,3 @@ then
 fi
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
