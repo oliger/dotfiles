@@ -1,29 +1,55 @@
-export ZSH="$HOME/.dotfiles"
-export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/heroku/bin:$HOME/.rvm/bin:/usr/local/bin:$PATH"
-export PAGER="less"
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
+for zsh_file ($DOTFILES/**/*.zsh); do
+  source $zsh_file
+done
+unset zsh_file
+
+# Navigation
+# =============================================================================
+
+setopt AUTO_CD
+setopt CDABLE_VARS
+setopt CORRECT
+setopt CORRECT_ALL
+setopt EXTENDED_GLOB
 
 # Completion
-autoload -U compinit
-compinit
+# =============================================================================
 
-setopt auto_menu
-setopt complete_in_word
-setopt always_to_end
+autoload -Uz compinit && compinit -i
 
-setopt AUTOCD
-setopt CORRECT CORRECT_ALL
-setopt HISTIGNOREDUPS
+setopt ALWAYS_TO_END
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PARAM_SLASH
+setopt COMPLETE_IN_WORD
+setopt PATH_DIRS
 
-setopt COMPLETE_ALIASES
+WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
+# Binding
+# =============================================================================
 
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
-for config_file ($ZSH/**/*.zsh) source $config_file
+# History
+# =============================================================================
 
-if $(grc &>/dev/null); then source `brew --prefix`/etc/grc.bashrc; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+
+HISTSIZE=5000
+SAVEHIST=5000
+
+# Misc
+# =============================================================================
+
+if $(grc &>/dev/null); then
+  source `brew --prefix`/etc/grc.bashrc;
+fi
+
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
+
