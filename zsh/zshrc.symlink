@@ -1,15 +1,17 @@
 export ZSH="$HOME/.dotfiles"
-export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/heroku/bin:$HOME/.rvm/bin:$PATH"
+export PATH="$ZSH/bin:/usr/local/share/npm/bin:/usr/local/lib/node:/usr/local/heroku/bin:$HOME/.rvm/bin:/usr/local/bin:$PATH"
 export PAGER="less"
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
 
 # Completion
 autoload -U compinit
 compinit
 
-
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
 
 setopt AUTOCD
 setopt CORRECT CORRECT_ALL
@@ -22,9 +24,6 @@ bindkey "^E" end-of-line
 
 for config_file ($ZSH/**/*.zsh) source $config_file
 
-if $(grc &>/dev/null)
-then
-  source `brew --prefix`/etc/grc.bashrc
-fi
-
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+if $(grc &>/dev/null); then source `brew --prefix`/etc/grc.bashrc; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
