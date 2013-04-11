@@ -72,7 +72,7 @@ set smartcase
 " ==========================================================
 
 let mapleader= ","
-set tm=300
+set tm=600
 
 imap jj <Esc>
 
@@ -150,7 +150,6 @@ set laststatus=2
 
 set statusline+=%#warningmsg#
 set statusline+=%*
-
 
 " Reload .vimrc when we edit it
 au! BufWritePost .vimrc source %
