@@ -1,5 +1,6 @@
 alias d="cd ~/Dropbox"
-alias h="cd ~/hull"
+alias c="cd ~/code"
+alias h="cd ~/code/hull"
 
 alias v="mvim"
 alias v.="mvim ."
