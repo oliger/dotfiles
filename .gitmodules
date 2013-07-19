@@ -103,3 +103,6 @@
 [submodule "vim/vim.symlink/bundle/vim-slim"]
 	path = vim/vim.symlink/bundle/vim-slim
 	url = git@github.com:slim-template/vim-slim.git
+[submodule "vim/vim.symlink/bundle/vim-clojure"]
+	path = vim/vim.symlink/bundle/vim-clojure
+	url = git@github.com:guns/vim-clojure-static.git
