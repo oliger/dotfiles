@@ -106,3 +106,6 @@
 [submodule "vim/vim.symlink/bundle/vim-clojure"]
 	path = vim/vim.symlink/bundle/vim-clojure
 	url = git@github.com:guns/vim-clojure-static.git
+[submodule "vim/vim.symlink/bundle/vim-tmux-navigator"]
+	path = vim/vim.symlink/bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git

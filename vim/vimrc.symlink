@@ -14,6 +14,7 @@ if has("gui_running")
   set columns=90
 endif
 
+set t_Co=256
 set colorcolumn=80
 set textwidth=80
 
@@ -26,6 +27,10 @@ set number " Show line number
 set numberwidth=4
 set lsp=4
 set ruler " Show cursor position
+
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 
 
 " General
@@ -66,6 +71,10 @@ set hlsearch  " highlight search
 set incsearch " incremental search, search as you type
 set ignorecase
 set smartcase
+
+" More natural split
+set splitbelow
+set splitright
 
 
 " Mappings
@@ -150,6 +159,22 @@ set laststatus=2
 
 set statusline+=%#warningmsg#
 set statusline+=%*
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when xterm-keys is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
 
 " Reload .vimrc when we edit it
 au! BufWritePost .vimrc source %
