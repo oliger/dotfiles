@@ -1,7 +1,7 @@
 export DOTFILES="$HOME/.dotfiles"
 
 export EDITOR="vim"
-export VISUAL="mvim -f --nomru"
+export VISUAL="vim"
 
 export PAGER="less"
 

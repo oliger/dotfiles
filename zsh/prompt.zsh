@@ -32,5 +32,5 @@ git_status() {
   fi
 }
 
-PROMPT='$(git_status)%~$(git_branch)
+PROMPT='$(git_status)%3c$(git_branch)
 ${indicator} %{$reset_color%}'
