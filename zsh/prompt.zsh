@@ -24,7 +24,7 @@ git_status() {
   if [[ $st == "" ]]; then
     return
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]; then
+    if [[ $st == "nothing to commit, working directory clean" ]]; then
       echo "%{$fg_bold[green]%}●%{$reset_color%} "
     else
       echo "%{$fg_bold[red]%}●%{$reset_color%} "
@@ -34,3 +34,4 @@ git_status() {
 
 PROMPT='$(git_status)%3c$(git_branch)
 ${indicator} %{$reset_color%}'
+
