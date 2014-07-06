@@ -1,18 +1,26 @@
-" Pathogen
-call pathogen#infect()
+set nocompatible
+filetype off
 
-set encoding=utf-8
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'Lokaltog/powerline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ervandew/supertab'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+
+call vundle#end()
+
 filetype plugin indent on
-
-
-" Interface
-" ==========================================================
-
-if has("gui_running")
-  set guioptions=e-t " Remove the toolbar
-  set lines=43
-  set columns=90
-endif
 
 set t_Co=256
 set colorcolumn=80
@@ -27,24 +35,20 @@ set number " Show line number
 set numberwidth=4
 set lsp=4
 set ruler " Show cursor position
+set lazyredraw
 
 let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+let g:solarized_visibility = 'high'
+let g:solarized_contrast = 'high'
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
-  " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-set noerrorbells  " No noise.
-set nocompatible
-set autochdir " Switch to the current file directory
-set hidden " Change buffers without saving
+set noerrorbells
+set autochdir
+set hidden
 set showmatch
 set spelllang=en,fr
 set spellsuggest=5
@@ -55,36 +59,23 @@ set listchars=trail:.,tab:>-,eol:$
 set nolist
 set nobackup
 set noswapfile
-
-" Tabs & Spaces
 set expandtab
 set sw=2
 set ts=2
 set sts=2
 set autoindent
-
-" Avoid trailing whitespace.
-au BufWritePre * :%s/\s\+$//e
-
-" Enhanced command line completion
 set wildmenu
 set wildmode=list:longest
-
-" Searching
-set hlsearch  " highlight search
-set incsearch " incremental search, search as you type
+set hlsearch
+set incsearch
 set ignorecase
 set smartcase
-
-" More natural split
 set splitbelow
 set splitright
 
+au BufWritePre * :%s/\s\+$//e
 
-" Mappings
-" ==========================================================
-
-let mapleader= ","
+let mapleader= ','
 set tm=600
 
 imap jj <Esc>
@@ -126,10 +117,10 @@ vmap < <gv
 vmap > >gv
 
 " Get off my lawn
-nnoremap <Left>  :echoe "Use H"<CR>
+nnoremap <Left> :echoe "Use H"<CR>
 nnoremap <Right> :echoe "Use L"<CR>
-nnoremap <Up>    :echoe "Use K"<CR>
-nnoremap <Down>  :echoe "Use J"<CR>
+nnoremap <Up> :echoe "Use K"<CR>
+nnoremap <Down> :echoe "Use J"<CR>
 
 " NERDTree
 noremap <silent> <leader>n :NERDTreeToggle<CR>
@@ -138,29 +129,12 @@ noremap <silent> <leader>n :NERDTreeToggle<CR>
 vmap Q gq
 nmap Q gqap
 
-" Omnicompletion
-" words
-inoremap <leader>, <C-x><C-o>
-" filenames
-inoremap <leader>: <C-x><C-f>
-" lines
-inoremap <leader>= <C-x><C-l>
-
-" Misc
-" ==========================================================
-
 let NERDTreeMouseMode=1
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=0
-let g:syntastic_auto_loc_list=2
-
 set laststatus=2
-
 set statusline+=%#warningmsg#
 set statusline+=%*
 
@@ -182,3 +156,4 @@ endif
 
 " Reload .vimrc when we edit it
 au! BufWritePost .vimrc source %
+

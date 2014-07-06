@@ -45,11 +45,8 @@ SAVEHIST=5000
 # Misc
 # =============================================================================
 
-if $(grc &>/dev/null); then
-  source `brew --prefix`/etc/grc.bashrc;
-fi
+source ~/.nvm/nvm.sh
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
 fi
-
