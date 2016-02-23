@@ -45,7 +45,8 @@ SAVEHIST=5000
 # Misc
 # =============================================================================
 
-source ~/.nvm/nvm.sh
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
