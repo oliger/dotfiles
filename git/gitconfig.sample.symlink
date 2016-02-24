@@ -1,17 +1,5 @@
 [user]
 	name = Jimmy Oliger
 	email = hi@jimmyoliger.com
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[diff]
-	tool = Kaleidoscope
 [core]
-	quotepath = false
-	excludesfile = /Users/Jimmy/.gitignore_global
-	editor = mvim -f
+	excludesfile = /Users/jimmy/.gitignore_global
