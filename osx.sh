@@ -109,8 +109,8 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Set the icon size of Dock items to 48 pixels
-defaults write com.apple.dock tilesize -int 48
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 60
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
