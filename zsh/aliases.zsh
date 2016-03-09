@@ -1,6 +1,5 @@
 alias d='cd ~/Dropbox'
-alias c='cd ~/code'
-alias h='cd ~/code/hull'
+alias s='cd ~/stuart'
 
 alias v='vim'
 alias v.='vim .'
