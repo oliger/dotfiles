@@ -1,5 +1,12 @@
 require 'rake'
 
+SOURCE_DIR = "#{ENV['DOTFILES']}/planck"
+QMK_DIR = "#{ENV['CODE']}/qmk_firmware"
+KEYMAY_NAME = "jimmy"
+LINK_DIR = "#{QMK_DIR}/keyboards/planck/keymaps/#{KEYMAY_NAME}"
+
+task default: :install
+
 desc "Hook our dotfiles into system-standard positions."
 task :install do
   linkables = Dir.glob('*/**{.symlink}')
@@ -51,4 +58,18 @@ task :uninstall do
   end
 end
 
-task :default => 'install'
+namespace :planck do
+  task :link do
+    FileUtils.ln_s(SOURCE_DIR, LINK_DIR)
+  end
+
+  task :unlink do
+    FileUtils.rm_r(LINK_DIR)
+  end
+
+  task :flash do
+    Dir.chdir(QMK_DIR) do
+      sh "make planck/rev5:#{KEYMAY_NAME}:dfu"
+    end
+  end
+end
