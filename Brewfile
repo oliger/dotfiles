@@ -29,6 +29,7 @@ cask "github"
 cask "calibre"
 cask "appcleaner"
 cask "tunnelblick"
+cask "hyper"
 
 mas "Things3", id: 904280696
 mas "Xcode", id: 497799835
