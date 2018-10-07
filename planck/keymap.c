@@ -8,12 +8,14 @@ enum planck_layers {
   _SPECIAL,
   _SPECIAL_SFT,
   _SYMBOLS,
+  _GUI,
   _ADJUST
 };
 
 #define SPECIAL MO(_SPECIAL)
 #define SPECIAL_SFT MO(_SPECIAL_SFT)
 #define SYMBOLS MO(_SYMBOLS)
+#define GUI MO(_GUI)
 
 #define ARROWS_F LT(_ARROWS, KC_F)
 
@@ -44,13 +46,24 @@ enum planck_layers {
 #define CEDILLA UC(0xE7) // ç
 #define U_CEDILLA UC(0xC7) // Ç
 
+#define WM_FULL LALT(LGUI(KC_F))
+#define WM_NW LCTL(LGUI(KC_LEFT))
+#define WM_N LALT(LGUI(KC_UP))
+#define WM_NE LCTL(LGUI(KC_RGHT))
+#define WM_E LALT(LGUI(KC_RGHT))
+#define WM_SE S(LCTL(LGUI(KC_RGHT)))
+#define WM_S LALT(LGUI(KC_DOWN))
+#define WM_SW S(LCTL(LGUI(KC_LEFT)))
+#define WM_W LALT(LGUI(KC_LEFT))
+#define WM_CNTR LALT(LGUI(KC_C))
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT_planck_grid(
     KC_GESC,        KC_Q,      KC_W,      KC_E,    KC_R,     KC_T,   KC_Y,   KC_U,    KC_I,     KC_O,     KC_P,     KC_BSPC,
     KC_TAB,         KC_A,      KC_S,      KC_D,    ARROWS_F, KC_G,   KC_H,   KC_J,    KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
     LSFT_T(KC_EQL), KC_Z,      KC_X,      KC_C,    KC_V,     KC_B,   KC_N,   KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
-    KC_HYPR,        LCTL_VOLD, LALT_VOLU, KC_LCMD, SPECIAL,  KC_SPC, KC_SPC, SYMBOLS, RCMD_RWD, RALT_PLY, RCTL_FWD, KC_HYPR
+    GUI,            LCTL_VOLD, LALT_VOLU, KC_LCMD, SPECIAL,  KC_SPC, KC_SPC, SYMBOLS, RCMD_RWD, RALT_PLY, RCTL_FWD, KC_HYPR
 ),
 
 [_ARROWS] = LAYOUT_planck_grid(
@@ -78,6 +91,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_TILD,
     _______, KC_LT,   KC_LPRN, KC_LCBR, KC_LBRC, KC_MINS, KC_PLUS, KC_RBRC, KC_RCBR, KC_RPRN, KC_GT,   KC_BSLS,
     _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_PIPE, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
+[_GUI] = LAYOUT_planck_grid(
+    _______, _______, _______, _______, _______, _______, _______, WM_NW,   WM_N,    WM_NE,   _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_W,    WM_CNTR, WM_E,    WM_FULL, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_SW,   WM_S,    WM_SE,   _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
