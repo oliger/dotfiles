@@ -17,6 +17,12 @@ enum planck_layers {
 
 #define ARROWS_F LT(_ARROWS, KC_F)
 
+#define LCTL_VOLD LCTL_T(KC__VOLDOWN)
+#define LALT_VOLU LALT_T(KC__VOLUP)
+#define RCMD_RWD RCMD_T(KC_MRWD)
+#define RALT_PLY RALT_T(KC_MPLY)
+#define RCTL_FWD RCTL_T(KC_MFFD)
+
 #define SSHOT LCMD(LCTL(S(KC_4)))
 
 #define AGRAVE UC(0xE0) // à
@@ -52,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_GESC,        KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    KC_TAB,         KC_A,    KC_S,    KC_D,    ARROWS_F, KC_G,   KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    LSFT_T(KC_EQL), KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-    KC_HYPR,        LCTL_T(KC__VOLDOWN), LALT_T(KC__VOLUP), KC_LCMD, SPECIAL,  KC_SPC, KC_SPC, SYMBOLS, RCMD_T(KC_MRWD), RALT_T(KC_MPLY), RCTL_T(KC_MFFD), KC_HYPR
+    KC_GESC,        KC_Q,      KC_W,      KC_E,    KC_R,     KC_T,   KC_Y,   KC_U,    KC_I,     KC_O,     KC_P,     KC_BSPC,
+    KC_TAB,         KC_A,      KC_S,      KC_D,    ARROWS_F, KC_G,   KC_H,   KC_J,    KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
+    LSFT_T(KC_EQL), KC_Z,      KC_X,      KC_C,    KC_V,     KC_B,   KC_N,   KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
+    KC_HYPR,        LCTL_VOLD, LALT_VOLU, KC_LCMD, SPECIAL,  KC_SPC, KC_SPC, SYMBOLS, RCMD_RWD, RALT_PLY, RCTL_FWD, KC_HYPR
 ),
 
 /*
