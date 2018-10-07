@@ -1,4 +1,7 @@
 export DOTFILES="$HOME/.dots"
+export CODE="$HOME/code"
+export WORK="$HOME/work"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="less"

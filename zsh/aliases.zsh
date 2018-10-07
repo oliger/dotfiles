@@ -1,5 +1,6 @@
-alias s='cd ~/stuart'
-alias d='cd ~/.dots'
+alias w='cd $WORK'
+alias c='cd $CODE'
+alias d='cd $DOTFILES'
 
 alias v='nvim'
 alias v.='nvim .'
