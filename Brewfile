@@ -10,6 +10,7 @@ brew "nvm"
 brew "yarn"
 brew "rbenv"
 brew "ruby-build"
+brew "libpng"
 brew "youtube-dl"
 
 cask "atom"
