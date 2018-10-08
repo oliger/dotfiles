@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "osx-cross/avr"
+tap "px4/px4"
 
 brew "mas"
 
@@ -11,6 +13,12 @@ brew "yarn"
 brew "rbenv"
 brew "ruby-build"
 brew "libpng"
+
+brew "avrdude"
+brew "dfu-programmer"
+brew "osx-cross/avr/avr-gcc"
+brew "px4/px4/gcc-arm-none-eabi"
+
 brew "youtube-dl"
 
 cask "atom"
