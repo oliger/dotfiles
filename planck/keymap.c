@@ -25,7 +25,7 @@ enum planck_layers {
 #define RALT_PLY RALT_T(KC_MPLY)
 #define RCTL_FWD RCTL_T(KC_MFFD)
 
-#define SSHOT LCMD(LCTL(S(KC_5)))
+#define SSHOT LCMD(S(KC_5))
 
 #define AGRAVE UC(0xE0) // à
 #define U_AGRAVE UC(0xC0) // À
