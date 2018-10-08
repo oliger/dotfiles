@@ -9,3 +9,5 @@ alias o='open'
 alias o.='open .'
 
 alias mkdir='mkdir -p'
+
+alias yarn='nocorrect yarn'
