@@ -46,7 +46,9 @@ enum planck_layers {
 #define CEDILLA UC(0xE7) // ç
 #define U_CEDILLA UC(0xC7) // Ç
 
+#define WM_LRGR LCTL(LALT(LSFT(KC_RGHT)))
 #define WM_FULL LALT(LGUI(KC_F))
+#define WM_SMLR LCTL(LALT(LSFT(KC_LEFT)))
 #define WM_NW LCTL(LGUI(KC_LEFT))
 #define WM_N LALT(LGUI(KC_UP))
 #define WM_NE LCTL(LGUI(KC_RGHT))
@@ -95,9 +97,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GUI] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, WM_NW,   WM_N,    WM_NE,   _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, WM_W,    WM_CNTR, WM_E,    WM_FULL, _______,
-    _______, _______, _______, _______, _______, _______, _______, WM_SW,   WM_S,    WM_SE,   _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_NW,   WM_N,    WM_NE,   WM_LRGR, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_W,    WM_CNTR, WM_E,    WM_SMLR, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_SW,   WM_S,    WM_SE,   WM_FULL, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
