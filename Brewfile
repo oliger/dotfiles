@@ -19,6 +19,7 @@ brew "dfu-programmer"
 brew "osx-cross/avr/avr-gcc"
 brew "px4/px4/gcc-arm-none-eabi"
 
+brew "wifi-password"
 brew "youtube-dl"
 
 cask "atom"
