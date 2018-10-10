@@ -13,6 +13,7 @@ brew "yarn"
 brew "rbenv"
 brew "ruby-build"
 brew "libpng"
+brew "watchman"
 
 brew "avrdude"
 brew "dfu-programmer"
