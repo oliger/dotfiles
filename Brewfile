@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "osx-cross/avr"
 tap "px4/px4"
+tap "heroku/brew"
 
 brew "mas"
 
@@ -14,6 +15,7 @@ brew "rbenv"
 brew "ruby-build"
 brew "libpng"
 brew "watchman"
+brew "heroku/brew/heroku"
 
 brew "avrdude"
 brew "dfu-programmer"
