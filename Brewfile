@@ -30,6 +30,7 @@ brew "px4/px4/gcc-arm-none-eabi"
 
 brew "wifi-password"
 brew "youtube-dl"
+brew "jq"
 
 cask "atom"
 cask "1password"
