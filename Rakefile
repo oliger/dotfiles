@@ -1,10 +1,5 @@
 require 'rake'
 
-SOURCE_DIR = "#{ENV['DOTFILES']}/planck"
-QMK_DIR = "#{ENV['CODE']}/qmk_firmware"
-KEYMAY_NAME = "jimmy"
-LINK_DIR = "#{QMK_DIR}/keyboards/planck/keymaps/#{KEYMAY_NAME}"
-
 task default: :install
 
 desc "Hook our dotfiles into system-standard positions."
@@ -58,18 +53,33 @@ task :uninstall do
   end
 end
 
-namespace :planck do
-  task :link do
-    FileUtils.ln_s(SOURCE_DIR, LINK_DIR)
-  end
+KEYBOARDS = [
+  [:planck, 'rev5', 'dfu'],
+  [:preonic, 'rev3', 'dfu-util']
+]
 
-  task :unlink do
-    FileUtils.rm_r(LINK_DIR)
-  end
+QMK_DIR = "#{ENV['CODE']}/qmk_firmware"
+KEYMAP_NAME = 'jimmy'
 
-  task :flash do
-    Dir.chdir(QMK_DIR) do
-      sh "make planck/rev5:#{KEYMAY_NAME}:dfu"
+KEYBOARDS.each do |(keyboard, rev, bootloader)|
+  source_dir = "#{ENV['DOTFILES']}/#{keyboard}"
+  link_dir = "#{QMK_DIR}/keyboards/#{keyboard}/keymaps/#{KEYMAP_NAME}"
+
+  flash_cmd = "make #{keyboard}/#{rev}:#{KEYMAP_NAME}:#{bootloader}"
+
+  namespace keyboard do
+    task :link do
+      FileUtils.ln_s(source_dir, link_dir)
+    end
+
+    task :unlink do
+      FileUtils.rm_r(link_dir)
+    end
+
+    task :flash do
+      Dir.chdir(QMK_DIR) do
+        sh flash_cmd
+      end
     end
   end
 end
