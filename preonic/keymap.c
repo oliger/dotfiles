@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "muse.h"
 
-enum preonic_layers {
+enum layers {
   _QWERTY,
   _ARROWS,
   _SPECIAL,
@@ -9,33 +9,147 @@ enum preonic_layers {
   _ADJUST
 };
 
-#define SPECIAL MO(_SPECIAL)
-#define SYMBOLS MO(_SYMBOLS)
-
-enum les_keycodes {
+enum keycodes {
   A_GRAVE = SAFE_RANGE,
   A_CIRCONFLEXE,
-
   E_GRAVE,
   E_CIRCONFLEXE,
   E_AIGU,
   E_TREMA,
-  E_EURO,
-
   I_CIRCONFLEXE,
   I_TREMA,
-
   O_CIRCONFLEXE,
-
   U_GRAVE,
   U_CIRCONFLEXE,
   U_TREMA,
-
   C_CEDILLE,
+  E_EURO
 };
+
+#define SPECIAL MO(_SPECIAL)
+#define SYMBOLS MO(_SYMBOLS)
 
 #define SSHOT LCMD(S(KC_5))
 #define ARROWS_F LT(_ARROWS, KC_F)
+
+/**
+ * Helpers
+ */
+
+void tap_grave(uint8_t mods, uint16_t keycode) {
+  register_code(KC_LALT);
+  tap_code(KC_GRV);
+  unregister_code(KC_LALT);
+  set_mods(mods);
+  tap_code(keycode);
+}
+
+void tap_circonflexe(uint8_t mods, uint16_t keycode) {
+  register_code(KC_LALT);
+  tap_code(KC_I);
+  unregister_code(KC_LALT);
+  set_mods(mods);
+  tap_code(keycode);
+}
+
+void tap_aigu(uint8_t mods, uint16_t keycode) {
+  register_code(KC_LALT);
+  tap_code(KC_E);
+  unregister_code(KC_LALT);
+  set_mods(mods);
+  tap_code(keycode);
+}
+
+void tap_trema(uint8_t mods, uint16_t keycode) {
+  register_code(KC_LALT);
+  tap_code(KC_U);
+  unregister_code(KC_LALT);
+  set_mods(mods);
+  tap_code(keycode);
+}
+
+void handle_french_keycode(uint8_t mods, uint16_t keycode, keyrecord_t *record) {
+  if (!record->event.pressed) return;
+
+  switch (keycode) {
+    // à
+    case A_GRAVE:
+      return tap_grave(mods, KC_A);
+    // â
+    case A_CIRCONFLEXE:
+      return tap_circonflexe(mods, KC_A);
+    // è
+    case E_GRAVE:
+      return tap_grave(mods, KC_E);
+    // ê
+    case E_CIRCONFLEXE:
+      return tap_circonflexe(mods, KC_E);
+    // é
+    case E_AIGU:
+      return tap_aigu(mods, KC_E);
+    // ë
+    case E_TREMA:
+      return tap_trema(mods, KC_E);
+    // î
+    case I_CIRCONFLEXE:
+      return tap_circonflexe(mods, KC_I);
+    // ï
+    case I_TREMA:
+      return tap_trema(mods, KC_I);
+    // ô
+    case O_CIRCONFLEXE:
+      return tap_circonflexe(mods, KC_O);
+    // ù
+    case U_GRAVE:
+      return tap_grave(mods, KC_U);
+    // û
+    case U_CIRCONFLEXE:
+      return tap_circonflexe(mods, KC_U);
+    // ü
+    case U_TREMA:
+      return tap_trema(mods, KC_U);
+    // ç
+    case C_CEDILLE:
+      set_mods(mods);
+      register_code(KC_LALT);
+      tap_code(KC_C);
+      unregister_code(KC_LALT);
+      return;
+    // €
+    case E_EURO:
+      register_code(KC_LALT);
+      register_code(KC_LSHIFT);
+      tap_code(KC_2);
+      unregister_code(KC_LALT);
+      unregister_code(KC_LSHIFT);
+      return;
+    default:
+      return;
+  }
+}
+
+/**
+ * Handlers
+ */
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  uint8_t mods = get_mods();
+  clear_keyboard();
+
+  handle_french_keycode(mods, keycode, record);
+
+  set_mods(mods);
+
+  return true;
+}
+
+uint32_t layer_state_set_user(uint32_t state) {
+  return update_tri_layer_state(state, _SPECIAL, _SYMBOLS, _ADJUST);
+}
+
+/**
+ * Layers
+ */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_preonic_grid(
@@ -78,163 +192,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   )
-
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  uint8_t mods = get_mods();
-
-  clear_keyboard();
-
-  switch (keycode) {
-    // à
-    case A_GRAVE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_GRV);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_A);
-      }
-      break;
-    // â
-    case A_CIRCONFLEXE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_I);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_A);
-      }
-      break;
-    // è
-    case E_GRAVE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_GRV);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_E);
-      }
-      break;
-    // ê
-    case E_CIRCONFLEXE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_I);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_E);
-      }
-      break;
-    // é
-    case E_AIGU:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_E);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_E);
-      }
-      break;
-    // ë
-    case E_TREMA:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_U);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_E);
-      }
-      break;
-    // €
-    case E_EURO:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        register_code(KC_LSHIFT);
-        tap_code(KC_2);
-        unregister_code(KC_LALT);
-        unregister_code(KC_LSHIFT);
-      }
-      break;
-    // î
-    case I_CIRCONFLEXE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_I);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_I);
-      }
-      break;
-    // ï
-    case I_TREMA:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_U);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_I);
-      }
-      break;
-    // ô
-    case O_CIRCONFLEXE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_I);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_O);
-      }
-      break;
-    // ù
-    case U_GRAVE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_GRV);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_U);
-      }
-      break;
-    // û
-    case U_CIRCONFLEXE:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_I);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_U);
-      }
-      break;
-    // ü
-    case U_TREMA:
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_U);
-        unregister_code(KC_LALT);
-        set_mods(mods);
-        tap_code(KC_U);
-      }
-      break;
-    // ç
-    case C_CEDILLE:
-      set_mods(mods);
-      if (record->event.pressed) {
-        register_code(KC_LALT);
-        tap_code(KC_C);
-        unregister_code(KC_LALT);
-      }
-      break;
-    default:
-      set_mods(mods);
-      return true;
-  }
-
-  set_mods(mods);
-  return false;
-}
-
-uint32_t layer_state_set_user(uint32_t state) {
-  return update_tri_layer_state(state, _SPECIAL, _SYMBOLS, _ADJUST);
-}
