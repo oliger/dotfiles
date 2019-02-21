@@ -6,6 +6,7 @@ enum layers {
   _ARROWS,
   _SPECIAL,
   _SYMBOLS,
+  _GUI,
   _ADJUST
 };
 
@@ -28,9 +29,23 @@ enum keycodes {
 
 #define SPECIAL MO(_SPECIAL)
 #define SYMBOLS MO(_SYMBOLS)
+#define GUI MO(_GUI)
 
 #define SSHOT LCMD(S(KC_5))
 #define ARROWS_F LT(_ARROWS, KC_F)
+
+#define WM_LRGR LCTL(LALT(LSFT(KC_RGHT)))
+#define WM_FULL LALT(LGUI(KC_F))
+#define WM_SMLR LCTL(LALT(LSFT(KC_LEFT)))
+#define WM_NW LCTL(LGUI(KC_LEFT))
+#define WM_N LALT(LGUI(KC_UP))
+#define WM_NE LCTL(LGUI(KC_RGHT))
+#define WM_E LALT(LGUI(KC_RGHT))
+#define WM_SE S(LCTL(LGUI(KC_RGHT)))
+#define WM_S LALT(LGUI(KC_DOWN))
+#define WM_SW S(LCTL(LGUI(KC_LEFT)))
+#define WM_W LALT(LGUI(KC_LEFT))
+#define WM_CNTR LALT(LGUI(KC_C))
 
 /**
  * Helpers
@@ -157,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_TAB,         KC_A,    KC_S,    KC_D,    ARROWS_F, KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     LSFT_T(KC_EQL), KC_Z,    KC_X,    KC_C,    KC_V,     KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),
-    _______,        KC_LCTL, KC_LALT, KC_LGUI, SPECIAL,  KC_SPC,  KC_SPC,  SYMBOLS, KC_LGUI, KC_LALT, KC_LCTL, KC_RGHT
+    GUI,            KC_LCTL, KC_LALT, KC_LGUI, SPECIAL,  KC_SPC,  KC_SPC,  SYMBOLS, KC_LGUI, KC_LALT, KC_LCTL, KC_RGHT
   ),
 
   [_ARROWS] = LAYOUT_preonic_grid(
@@ -184,6 +199,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
+  [_GUI] = LAYOUT_preonic_grid(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_NW,   WM_N,    WM_NE,   WM_LRGR, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_W,    WM_CNTR, WM_E,    WM_SMLR, _______,
+    _______, _______, _______, _______, _______, _______, _______, WM_SW,   WM_S,    WM_SE,   WM_FULL, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  ),
 
   [_ADJUST] = LAYOUT_preonic_grid(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
