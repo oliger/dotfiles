@@ -6,14 +6,12 @@ enum planck_layers {
   _QWERTY,
   _ARROWS,
   _SPECIAL,
-  _SPECIAL_SFT,
   _SYMBOLS,
   _GUI,
   _ADJUST
 };
 
 #define SPECIAL MO(_SPECIAL)
-#define SPECIAL_SFT MO(_SPECIAL_SFT)
 #define SYMBOLS MO(_SYMBOLS)
 #define GUI MO(_GUI)
 
@@ -27,25 +25,6 @@ enum planck_layers {
 
 #define SSHOT LCMD(S(KC_5))
 
-#define AGRAVE UC(0xE0) // à
-#define U_AGRAVE UC(0xC0) // À
-#define ACIRCUM UC(0xE2) // â
-#define U_ACIRCUM UC(0xC2) // Â
-#define EACUTE UC(0xE9) // é
-#define U_EACUTE UC(0xC9) // È
-#define EGRAVE UC(0xE8) // è
-#define U_EGRAVE UC(0xC8) // È
-#define ECIRCUM UC(0xEA) // ê
-#define U_ECIRCUM UC(0xCA) // Ê
-#define IDIAERS UC(0xEF) // ï
-#define U_IDIAERS UC(0xCF) // Ï
-#define OCIRCUM UC(0xF4) // ô
-#define U_OCIRCUM UC(0xD4) // Ô
-#define UGRAVE UC(0xF9) // ù
-#define U_UGRAVE UC(0xD9) // Ù
-#define CEDILLA UC(0xE7) // ç
-#define U_CEDILLA UC(0xC7) // Ç
-
 #define WM_LRGR LCTL(LALT(LSFT(KC_RGHT)))
 #define WM_FULL LALT(LGUI(KC_F))
 #define WM_SMLR LCTL(LALT(LSFT(KC_LEFT)))
@@ -58,6 +37,27 @@ enum planck_layers {
 #define WM_SW S(LCTL(LGUI(KC_LEFT)))
 #define WM_W LALT(LGUI(KC_LEFT))
 #define WM_CNTR LALT(LGUI(KC_C))
+
+enum les_keycodes {
+  A_GRAVE = SAFE_RANGE,
+  A_CIRCONFLEXE,
+
+  E_GRAVE,
+  E_CIRCONFLEXE,
+  E_AIGU,
+  E_TREMA,
+
+  I_CIRCONFLEXE,
+  I_TREMA,
+
+  O_CIRCONFLEXE,
+
+  U_GRAVE,
+  U_CIRCONFLEXE,
+  U_TREMA,
+
+  C_CEDILLE,
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -76,17 +76,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_SPECIAL] = LAYOUT_planck_grid(
-    _______,     _______, ECIRCUM, EACUTE,  EGRAVE,  _______, _______, UGRAVE,  IDIAERS, OCIRCUM, _______, _______,
-    _______,     AGRAVE,  ACIRCUM, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    SPECIAL_SFT, _______, _______, CEDILLA, _______, _______, _______, _______, _______, _______, _______, SPECIAL_SFT,
-    _______,     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-
-[_SPECIAL_SFT] = LAYOUT_planck_grid(
-    _______, _______,  U_ECIRCUM, U_EACUTE,  U_EGRAVE, _______, _______, U_UGRAVE, U_IDIAERS, U_OCIRCUM, _______, _______,
-    _______, U_AGRAVE, U_ACIRCUM, _______,   _______,  _______, _______, _______,  _______,   _______,   _______, _______,
-    _______, _______,  _______,   U_CEDILLA, _______,  _______, _______, _______,  _______,   _______,   _______, _______,
-    _______, _______,  _______,   _______,   _______,  _______, _______, _______,  _______,   _______,   _______, _______
+    _______, _______, E_CIRCONFLEXE, E_AIGU,    E_GRAVE, E_TREMA, _______, U_GRAVE,       I_TREMA,       O_CIRCONFLEXE, _______, _______,
+    _______, A_GRAVE, A_CIRCONFLEXE, _______,   _______, _______, _______, U_CIRCONFLEXE, I_CIRCONFLEXE, _______,       _______, _______,
+    _______, _______, _______,       C_CEDILLE, _______, _______, _______, U_TREMA,       _______,       _______,       _______, _______,
+    _______, _______, _______,       _______,   _______, _______, _______, _______,       _______,       _______,       _______, _______
 ),
 
 [_SYMBOLS] = LAYOUT_planck_grid(
@@ -104,13 +97,157 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, RESET,   DEBUG,   _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, RESET,   DEBUG,   _______, _______, _______, _______, _______, A_CIRCONFLEXE, E_AIGU, A_GRAVE, C_CEDILLE,
+    _______, _______, _______, _______, _______, _______, _______, _______, E_CIRCONFLEXE, _______, E_GRAVE, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, I_CIRCONFLEXE, _______, U_GRAVE, RSFT_T(KC_ENT),
+    _______, _______, _______, _______, _______, _______, _______, _______, O_CIRCONFLEXE, _______, _______, U_CIRCONFLEXE
 )
 
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  uint8_t mods = get_mods();
+
+  clear_keyboard();
+
+  switch (keycode) {
+    // à
+    case A_GRAVE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_GRV);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_A);
+      }
+      break;
+    // â
+    case A_CIRCONFLEXE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_I);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_A);
+      }
+      break;
+    // è
+    case E_GRAVE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_GRV);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_E);
+      }
+      break;
+    // ê
+    case E_CIRCONFLEXE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_I);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_E);
+      }
+      break;
+    // é
+    case E_AIGU:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_E);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_E);
+      }
+      break;
+    // ë
+    case E_TREMA:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_U);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_E);
+      }
+      break;
+    // î
+    case I_CIRCONFLEXE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_I);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_I);
+      }
+      break;
+    // ï
+    case I_TREMA:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_U);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_I);
+      }
+      break;
+    // ô
+    case O_CIRCONFLEXE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_I);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_O);
+      }
+      break;
+    // ù
+    case U_GRAVE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_GRV);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_U);
+      }
+      break;
+    // û
+    case U_CIRCONFLEXE:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_I);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_U);
+      }
+      break;
+    // ü
+    case U_TREMA:
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_U);
+        unregister_code(KC_LALT);
+        set_mods(mods);
+        tap_code(KC_U);
+      }
+      break;
+    // ç
+    case C_CEDILLE:
+      set_mods(mods);
+      if (record->event.pressed) {
+        register_code(KC_LALT);
+        tap_code(KC_C);
+        unregister_code(KC_LALT);
+      }
+      return false;
+    default:
+      set_mods(mods);
+      return true;
+  }
+
+  set_mods(mods);
+  return false;
+}
 
 uint32_t layer_state_set_user(uint32_t state) {
   return update_tri_layer_state(state, _SPECIAL, _SYMBOLS, _ADJUST);
