@@ -31,6 +31,7 @@ cask "appcleaner"
 cask "hyper"
 cask "figma"
 cask "notion"
+cask "zoomus"
 
 brew "neovim"
 brew "nvm"
