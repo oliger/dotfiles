@@ -47,7 +47,3 @@ SAVEHIST=5000
 
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
-
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-fi
