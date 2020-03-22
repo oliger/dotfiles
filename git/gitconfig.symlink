@@ -2,7 +2,7 @@
 	name = Jimmy Oliger
 	email = jimmyoliger@gmail.com
 [core]
-	editor = code --wait
+	editor = code --new-window --wait
 	excludesfile = ~/.gitignore
 	ignorecase = false
 [push]
