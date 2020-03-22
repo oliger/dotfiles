@@ -2,9 +2,10 @@
 	name = Jimmy Oliger
 	email = jimmyoliger@gmail.com
 [core]
+	editor = code --wait
 	excludesfile = ~/.gitignore
 	ignorecase = false
 [push]
 	default = simple
 [credential]
-	helper = osxkeychai
+	helper = osxkeychain
