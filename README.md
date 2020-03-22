@@ -1,8 +1,14 @@
-# Dots
+# Dotfiles
 
-- Install Xcode
-- Run `chsh -s /bin/zsh`
-- Install [Homebrew](https://brew.sh/)
-- Install [Fira Code](https://github.com/tonsky/FiraCode)
-- Run `brew bundle`
-- Run `rake install`
+## Requirements
+
+- [XCode](developer.apple.com/downloads)
+- [Fira Code](https://github.com/tonsky/FiraCode)
+
+## Installation
+
+```sh
+git clone git@github.com:oliger/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+script/bootstrap
+```

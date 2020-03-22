@@ -1,0 +1,24 @@
+{
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 20,
+  "editor.lineHeight": 30,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
+  "workbench.colorTheme": "Noctis Obscuro",
+  "workbench.startupEditor": "newUntitledFile",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false
+}

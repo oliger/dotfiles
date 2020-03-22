@@ -2,14 +2,9 @@
 	name = Jimmy Oliger
 	email = jimmyoliger@gmail.com
 [core]
-	excludesfile = /Users/jimmy/.gitignore_global
+	excludesfile = ~/.gitignore
 	ignorecase = false
 [push]
 	default = simple
-[pull]
-	rebase = true
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+[credential]
+	helper = osxkeychai

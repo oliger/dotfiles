@@ -1,49 +1,39 @@
-for zsh_file ($DOTFILES/**/*.zsh); do
-  source $zsh_file
+#!/bin/sh
+
+export DOTFILES=$HOME/.dotfiles
+export CODE=~/code
+
+export PATH="$PATH:$DOTFILES/bin"
+
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
 done
-unset zsh_file
 
-# Navigation
-# =============================================================================
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
 
-setopt AUTO_CD
-setopt CDABLE_VARS
-setopt CORRECT
-setopt CORRECT_ALL
-setopt EXTENDED_GLOB
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
 
-# Completion
-# =============================================================================
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
 
-autoload -Uz compinit && compinit -i
-
-setopt ALWAYS_TO_END
-setopt AUTO_LIST
-setopt AUTO_MENU
-setopt AUTO_PARAM_SLASH
-setopt COMPLETE_IN_WORD
-setopt PATH_DIRS
-
-WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
-
-# Binding
-# =============================================================================
-
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-
-# History
-# =============================================================================
-
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt SHARE_HISTORY
-
-HISTSIZE=5000
-SAVEHIST=5000
-
-# Misc
-# =============================================================================
-
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+unset config_files
