@@ -12,7 +12,7 @@
   "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Noctis Obscuro",
+  "workbench.colorTheme": "Monochrome Dark",
   "workbench.startupEditor": "newUntitledFile",
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
