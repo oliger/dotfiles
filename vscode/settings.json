@@ -6,17 +6,18 @@
   "editor.formatOnSave": true,
   "editor.lineHeight": 36,
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "fullscreen",
+  "workbench.iconTheme": null,
   "workbench.colorTheme": "Monochrome Dark",
   "workbench.startupEditor": "newUntitledFile",
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0
 }
