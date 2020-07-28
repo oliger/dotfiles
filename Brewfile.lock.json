@@ -2,16 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "57766654f0a9adacb2f1dc6e0b7687673d49284e"
+        "revision": "b9a71195a26f91a02e0368307dc4d23fdde7159c"
       },
       "homebrew/cask": {
-        "revision": "e6934bcb255b80eeec138a04bbd0c61911d44e9d"
+        "revision": "d7fc907963199addca6aba1fa43089581880674a"
       },
       "homebrew/core": {
-        "revision": "0d11a3098a91bd03a62976ae2a3dcc0b82718f38"
+        "revision": "67f66e3aac7b04e509d8e13c1dc7858e85494872"
       },
       "homebrew/services": {
-        "revision": "0b5bd211fca978a133ca51021d6ba84b51c305b7"
+        "revision": "0751891ca39d3cbbe396dc9f1291466303f24a56"
+      },
+      "homebrew/cask-versions": {
+        "revision": "b0e70f4851d92fe6ab57553a064261f72ce6fce0"
       }
     },
     "brew": {
@@ -33,22 +36,22 @@
         }
       },
       "git": {
-        "version": "2.26.2_1",
+        "version": "2.27.0",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.26.2_1.catalina.bottle.tar.gz",
-              "sha256": "8796a6c37723ae33d22fe5bfc249b9135b309c87ec2b41e6025d726df1a2dee6"
+              "url": "https://homebrew.bintray.com/bottles/git-2.27.0.catalina.bottle.1.tar.gz",
+              "sha256": "731a77dd23d63ca8a0a5ba5c990218e37f1c8d9313fa1f9e58771cf5abd97bef"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.26.2_1.mojave.bottle.tar.gz",
-              "sha256": "592f95984655ada33979a863f5d12e07fca9a67b7c6e7eab9f17b597f9cd9fc9"
+              "url": "https://homebrew.bintray.com/bottles/git-2.27.0.mojave.bottle.1.tar.gz",
+              "sha256": "a752212149e96e67fd8c42e1d68d7612de94bc67f06ffdc13ed7236aa33debf4"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/git-2.26.2_1.high_sierra.bottle.tar.gz",
-              "sha256": "4d765a420dec19d5261e12b336b6912e9e5fb571ffb5bc4b5d7eae7f7766347d"
+              "url": "https://homebrew.bintray.com/bottles/git-2.27.0.high_sierra.bottle.1.tar.gz",
+              "sha256": "c9b1c7d3686fac0f7006b13b1afd46e38f2d6c73dd72049d9e8fc49b1bb34599"
             }
           }
         }
@@ -113,7 +116,7 @@
         "bottle": false
       },
       "youtube-dl": {
-        "version": "2020.05.29",
+        "version": "2020.06.16.1",
         "bottle": false
       },
       "glslviewer": {
@@ -212,7 +215,7 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.8,137981",
+        "version": "6.1.12,139181",
         "options": {
           "full_name": "virtualbox"
         }
@@ -230,7 +233,7 @@
         }
       },
       "calibre": {
-        "version": "4.17.0",
+        "version": "4.21.0",
         "options": {
           "full_name": "calibre"
         }
@@ -260,9 +263,27 @@
         }
       },
       "blender": {
-        "version": "2.82a",
+        "version": "2.83.3",
         "options": {
           "full_name": "blender"
+        }
+      },
+      "microsoft-edge-dev": {
+        "version": "85.0.564.13",
+        "options": {
+          "full_name": "microsoft-edge-dev"
+        }
+      },
+      "safari-technology-preview": {
+        "version": "110,001-26262-20200715-7968c880-7e9c-4ea5-9f90-f337c51066d8",
+        "options": {
+          "full_name": "safari-technology-preview"
+        }
+      },
+      "docker": {
+        "version": "2.3.0.3,45519",
+        "options": {
+          "full_name": "docker"
         }
       }
     },
@@ -270,19 +291,19 @@
       "Things3": null,
       "Xcode": {
         "id": "497799835",
-        "version": "11.5"
+        "version": "11.6"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.17",
+        "HOMEBREW_VERSION": "2.4.8",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "0d11a3098a91bd03a62976ae2a3dcc0b82718f38",
-        "CLT": "11.5.0.0.1.1588476445",
-        "Xcode": "11.5",
-        "macOS": "10.15.4"
+        "Homebrew/homebrew-core": "67f66e3aac7b04e509d8e13c1dc7858e85494872",
+        "CLT": "1103.0.32.62",
+        "Xcode": "11.6",
+        "macOS": "10.15.6"
       }
     }
   }
