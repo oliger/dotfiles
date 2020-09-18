@@ -11,10 +11,11 @@
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.iconTheme": null,
-  "workbench.colorTheme": "Monochrome Dark",
+  "workbench.colorTheme": "Noctis Azureus",
   "workbench.startupEditor": "newUntitledFile",
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
-  }
+  },
+  "git.enableSmartCommit": true
 }
