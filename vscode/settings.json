@@ -13,9 +13,17 @@
   "workbench.iconTheme": null,
   "workbench.colorTheme": "Noctis Azureus",
   "workbench.startupEditor": "newUntitledFile",
+  "git.enableSmartCommit": true,
+  "vim.leader": "<space>",
+  "vim.camelCaseMotion.enable": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "r"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
-  },
-  "git.enableSmartCommit": true
+  }
 }
