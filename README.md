@@ -3,7 +3,7 @@
 ## Requirements
 
 - [XCode](developer.apple.com/downloads)
-- [Fira Code](https://github.com/tonsky/FiraCode)
+- [Jetbrains Mono](https://www.jetbrains.com/lp/mono)
 
 ## Installation
 
