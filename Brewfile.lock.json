@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "b84d4569eafe799c7c46c6c12c63215cb8095b6d"
+        "revision": "12702c2b9111a447bb89cd887771d20cffab4e63"
       },
       "homebrew/cask": {
-        "revision": "bbc99a8a8b9db52ae9347356824fd2764b65cc2c"
+        "revision": "bfe52f0101048c9065a71d85f4e7fa5193599504"
       },
       "homebrew/core": {
-        "revision": "33ab1781fd7c8eaa089054c47ea19724647b5300"
+        "revision": "2da403612205f0e99d3345415930cd84d27a46e0"
       },
       "homebrew/services": {
-        "revision": "5ba553ecb4d4dad31eabd9535f262212d5098214"
+        "revision": "3d59cdac249a3edd554357ecf67785020a17dc08"
       },
       "homebrew/cask-versions": {
-        "revision": "9bf4e07824149b3f21d911cdca8d663217f2f6ac"
+        "revision": "78a46ae15268a21c7ee62abf111ce06f4d91d274"
       },
       "schollz/tap": {
         "revision": "2f4172ccddb7dd772bf347e3c5eedfc0b3c56397"
@@ -119,7 +119,7 @@
         "bottle": false
       },
       "youtube-dl": {
-        "version": "2020.09.14",
+        "version": "2020.09.20",
         "bottle": false
       },
       "glslviewer": {
@@ -257,7 +257,7 @@
         }
       },
       "calibre": {
-        "version": "4.23.0",
+        "version": "5.0.1",
         "options": {
           "full_name": "calibre"
         }
@@ -287,7 +287,7 @@
         }
       },
       "blender": {
-        "version": "2.90.0",
+        "version": "2.90.1",
         "options": {
           "full_name": "blender"
         }
@@ -322,9 +322,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.1",
+        "HOMEBREW_VERSION": "2.5.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "33ab1781fd7c8eaa089054c47ea19724647b5300",
+        "Homebrew/homebrew-core": "2da403612205f0e99d3345415930cd84d27a46e0",
         "CLT": "1103.0.32.62",
         "Xcode": "12.0",
         "macOS": "10.15.6"
