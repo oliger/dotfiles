@@ -49,5 +49,8 @@
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
   }
 }
