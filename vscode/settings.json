@@ -11,7 +11,7 @@
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.iconTheme": null,
-  "workbench.colorTheme": "Noctis Azureus",
+  "workbench.colorTheme": "Noctis Obscuro",
   "workbench.startupEditor": "newUntitledFile",
   "git.enableSmartCommit": true,
   "vim.leader": "<space>",
