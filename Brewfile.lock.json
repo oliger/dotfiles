@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "12702c2b9111a447bb89cd887771d20cffab4e63"
+        "revision": "40a0ca35d884eae0ab220cf60e951acdaea303ac"
       },
       "homebrew/cask": {
-        "revision": "bfe52f0101048c9065a71d85f4e7fa5193599504"
+        "revision": "b37ec4c875c660e56d9ca672c3fee41c99685649"
       },
       "homebrew/core": {
-        "revision": "2da403612205f0e99d3345415930cd84d27a46e0"
+        "revision": "3c0d2e29f68463a67e22f13a6211b3251d08e8f3"
       },
       "homebrew/services": {
-        "revision": "3d59cdac249a3edd554357ecf67785020a17dc08"
+        "revision": "b082342c220c490933caccbeab68504eeb7d7fa1"
       },
       "homebrew/cask-versions": {
-        "revision": "78a46ae15268a21c7ee62abf111ce06f4d91d274"
+        "revision": "cfe52a5b62f7f3efb578f408de6bff9c3656f07e"
       },
       "schollz/tap": {
         "revision": "2f4172ccddb7dd772bf347e3c5eedfc0b3c56397"
@@ -257,7 +257,7 @@
         }
       },
       "calibre": {
-        "version": "5.0.1",
+        "version": "5.1.0",
         "options": {
           "full_name": "calibre"
         }
@@ -315,7 +315,7 @@
       "Things3": null,
       "Xcode": {
         "id": "497799835",
-        "version": "12.0"
+        "version": "12.0.1"
       }
     }
   },
@@ -324,9 +324,9 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2da403612205f0e99d3345415930cd84d27a46e0",
+        "Homebrew/homebrew-core": "3c0d2e29f68463a67e22f13a6211b3251d08e8f3",
         "CLT": "1103.0.32.62",
-        "Xcode": "12.0",
+        "Xcode": "12.0.1",
         "macOS": "10.15.6"
       }
     }

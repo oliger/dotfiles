@@ -7,6 +7,7 @@ tap "schollz/tap"
 
 brew "mas"
 brew "git"
+brew "git-lfs"
 brew "watchman"
 brew "jq"
 brew "wifi-password"
