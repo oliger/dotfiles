@@ -1,8 +1,6 @@
 #!/bin/sh
 
 export DOTFILES=$HOME/.dotfiles
-export CODE=~/code
-
 export PATH="$PATH:$DOTFILES/bin"
 
 if [[ -a ~/.localrc ]]
