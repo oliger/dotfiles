@@ -1,17 +1,20 @@
 {
+  "breadcrumbs.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 16,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
-  "editor.lineHeight": 32,
+  "editor.lineHeight": 26,
+  "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Noctis Azureus",
+  "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": null,
-  "workbench.colorTheme": "Noctis Obscuro",
   "workbench.startupEditor": "newUntitledFile",
   "git.enableSmartCommit": true,
   "vim.leader": "<space>",
@@ -53,6 +56,10 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust"
   },
-  "explorer.confirmDelete": false,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "go.useLanguageServer": true
 }

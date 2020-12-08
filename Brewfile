@@ -6,6 +6,7 @@ tap "homebrew/services"
 tap "schollz/tap"
 
 brew "mas"
+brew "go"
 brew "git"
 brew "git-lfs"
 brew "watchman"
