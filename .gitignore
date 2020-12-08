@@ -1,2 +1,5 @@
 vscode/workspaceStorage
 vscode/globalStorage
+
+nvim/nvim.cfglink/autoload
+nvim/nvim.cfglink/plugged

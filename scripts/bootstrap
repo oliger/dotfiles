@@ -95,13 +95,20 @@ link_file () {
 }
 
 install_dotfiles () {
-  info 'installing dotfiles'
-
   local overwrite_all=false backup_all=false skip_all=false
 
+  info 'installing dotfiles'
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
+    link_file "$src" "$dst"
+  done
+
+  info 'installing config dotfiles'
+  mkdir -p "$HOME/.config"
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.cfglink' -not -path '*.git*')
+  do
+    dst="$HOME/.config/$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
 }
