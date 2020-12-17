@@ -13,7 +13,7 @@ brew "watchman"
 brew "jq"
 brew "wifi-password"
 brew "youtube-dl"
-brew "croc"
+brew "fzf"
 
 cask "1password"
 cask "telegram"
