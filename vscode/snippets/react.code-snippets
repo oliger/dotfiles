@@ -1,0 +1,47 @@
+{
+  "Import React": {
+    "prefix": "ir",
+    "scope": "typescriptreact,javascriptreact",
+    "body": ["import React from 'react'"]
+  },
+  "React Component (ts)": {
+    "scope": "typescriptreact",
+    "prefix": "rc",
+    "body": [
+      "type $2 = {}",
+      "",
+      "const ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}} = (props: ${2:Props}) => {",
+      "  $3",
+      "};"
+    ]
+  },
+  "React Component (js)": {
+    "scope": "javascriptreact",
+    "prefix": "rc",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}} = (props) => {",
+      "  $2",
+      "};"
+    ]
+  },
+  "useState": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "ush",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState(${2})"]
+  },
+  "useMemo": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "umh",
+    "body": ["const $1 = useMemo(() => {", "  $2", "}, [$3])"]
+  },
+  "useRef": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "urh",
+    "body": ["const ${1}Ref = useRef(${2})"]
+  },
+  "useEffect": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "ueh",
+    "body": ["useEffect(() => {", "  $1", "  ${2:() => $3}", "}, [$4])"]
+  }
+}

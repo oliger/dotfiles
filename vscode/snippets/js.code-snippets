@@ -1,0 +1,27 @@
+{
+  "Import": {
+    "prefix": "im",
+    "scope": "typescript,javascript,typescriptreact,javascriptreact",
+    "body": ["import ${2:${1/(.*)/${1:/capitalize}/}} from '${1}'"]
+  },
+  "Import Destructured": {
+    "prefix": "imd",
+    "scope": "typescript,javascript,typescriptreact,javascriptreact",
+    "body": ["import {$2} from '$1'"]
+  },
+  "Console Log": {
+    "prefix": "cl",
+    "scope": "typescript,javascript,typescriptreact,javascriptreact",
+    "body": ["console.log($1)"]
+  },
+  "Destructure": {
+    "prefix": "d",
+    "scope": "typescript,javascript,typescriptreact,javascriptreact",
+    "body": ["const { $2 } = $1"]
+  },
+  "Promise": {
+    "prefix": "pro",
+    "scope": "typescript,javascript,typescriptreact,javascriptreact",
+    "body": ["new Promise((resolve, reject) => {", "  $1", "})"]
+  }
+}
