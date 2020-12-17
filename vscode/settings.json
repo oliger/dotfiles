@@ -13,7 +13,6 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "workbench.colorTheme": "Noctis Azureus",
-  "workbench.editor.tabCloseButton": "off",
   "workbench.iconTheme": null,
   "workbench.startupEditor": "newUntitledFile",
   "git.enableSmartCommit": true,
@@ -25,12 +24,8 @@
       "commands": ["editor.action.rename"]
     },
     {
-      "before": ["<C-k>"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["<C-j>"],
-      "commands": ["editor.action.moveLinesDownAction"]
+      "before": ["leader", "/"],
+      "commands": ["editor.action.commentLine"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -41,6 +36,10 @@
     {
       "before": ["<C-j>"],
       "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["leader", "/"],
+      "commands": ["editor.action.commentLine"]
     }
   ],
   "vim.insertModeKeyBindings": [

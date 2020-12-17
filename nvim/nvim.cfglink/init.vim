@@ -7,30 +7,62 @@ endif
 call plug#begin(expand('~/.config/nvim/plugged'))
 
 Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
-Plug 'junegunn/vim-easy-align'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp'
+Plug 'nvim-lua/completion-nvim'
 Plug 'tpope/vim-surround'
-Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 call plug#end()
 
+" nvim configuration
+set hidden
+set relativenumber
+set completeopt=menuone,noinsert
+set noerrorbells
+set showcmd
+set noswapfile
+set nobackup
+set splitright
+set splitbelow
+set autowrite
+
+filetype plugin on
+
+" keymaps
 let mapleader = "\<Space>" 
 
-set number
+imap jj <Esc>
+nnoremap <Leader>v :e $MYVIMRC<CR>
 
+" prettier
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#exec_cmd_async = 1
 
-nnoremap <Leader>v :ec $MYVIMRC<cr>
+" fzf
+let g:fzf_layout = { 'down': '~20%' }
+
+" NERDTree
+let NERDTreeShowHidden=1
+
+noremap <Leader>n :NERDTreeToggle<cr>
+
+" NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+
+map <leader>/ <plug>NERDCommenterToggle
+
+" lsp configuration
+lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 
 if !exists('*ReloadVimrc')
   fun! ReloadVimrc()
