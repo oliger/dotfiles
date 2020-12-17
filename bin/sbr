@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 branches=$(git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
 branch=$(echo "$branches" | fzf +m --info=hidden --layout=reverse --height=10%) &&
 git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
