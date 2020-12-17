@@ -2,7 +2,7 @@
 	name = Jimmy Oliger
 	email = jimmyoliger@gmail.com
 [core]
-	editor = code --new-window --wait
+	editor = nvim
 	excludesfile = ~/.gitignore
 	ignorecase = false
 [push]
