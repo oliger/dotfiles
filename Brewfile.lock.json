@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "5628f2152de4896e0994fe0c3c1d0d7350ddf1ff"
+        "revision": "93aacde80622e3d658474d9916f7d536c0f3ea86"
       },
       "homebrew/cask": {
-        "revision": "90f22d9188f0f5f6b1b3857a9e21a649b7bfe405"
+        "revision": "325bcc48af1b7e3108a9187c0b21744c323eebed"
       },
       "homebrew/core": {
-        "revision": "e422a6f3682d67b33250bcfe43a48ecaf4e91e7c"
+        "revision": "e5ca94aa22c6d8b0606aceb119378411ffd1fbda"
       },
       "homebrew/services": {
-        "revision": "492fa4ecaffcd735fea8aad6655ccf10228e6c0f"
+        "revision": "6e1ec6f5797e7b841a697929ed09fc8756b59cdd"
       },
       "homebrew/cask-versions": {
-        "revision": "0f980248f3d21bee0c5677f579aa3309a1719dea"
+        "revision": "6d1d8f1e2aeaa53f3f0dc42c4353cd347eab8ee2"
       },
       "schollz/tap": {
         "revision": "407cb367d6baafb0ccabdb17b4d57969117c3cbc"
@@ -425,13 +425,19 @@
         "options": {
           "full_name": "brave-browser"
         }
+      },
+      "1password-cli": {
+        "version": "1.8.0",
+        "options": {
+          "full_name": "1password-cli"
+        }
       }
     },
     "mas": {
       "Things3": null,
       "Xcode": {
         "id": "497799835",
-        "version": "12.2"
+        "version": "12.3"
       }
     }
   },
@@ -446,12 +452,12 @@
         "macOS": "10.15.6"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "2.6.1",
+        "HOMEBREW_VERSION": "2.6.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e422a6f3682d67b33250bcfe43a48ecaf4e91e7c",
-        "CLT": "12.2.0.0.1.1604076827",
-        "Xcode": "12.2",
-        "macOS": "11.0.1"
+        "Homebrew/homebrew-core": "e5ca94aa22c6d8b0606aceb119378411ffd1fbda",
+        "CLT": "",
+        "Xcode": "12.3",
+        "macOS": "11.1"
       }
     }
   }
