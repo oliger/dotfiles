@@ -17,6 +17,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'tpope/vim-surround'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'Lokaltog/vim-monotone'
 
 call plug#end()
 
@@ -31,8 +32,13 @@ set nobackup
 set splitright
 set splitbelow
 set autowrite
+set termguicolors
 
 filetype plugin on
+
+" Theme
+let g:monotone_contrast_factor = 1.1
+colorscheme monotone
 
 " keymaps
 let mapleader = "\<Space>" 
