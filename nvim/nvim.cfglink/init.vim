@@ -53,6 +53,7 @@ let g:prettier#exec_cmd_async = 1
 
 " fzf
 let g:fzf_layout = { 'down': '~20%' }
+nmap <C-p> :GFiles<CR>
 
 " NERDTree
 let NERDTreeShowHidden=1
