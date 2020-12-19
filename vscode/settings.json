@@ -5,18 +5,25 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
-  "editor.lineHeight": 26,
+  "editor.lineHeight": 24,
+  "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "editor.codeActionsOnSave": ["source.addMissingImports"],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Noctis Azureus",
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.visible": false,
   "workbench.iconTheme": null,
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Monochrome Dark",
+  "workbench.preferredLightColorTheme": "Monochrome Light",
+  "workbench.preferredDarkColorTheme": "Monochrome Dark",
+  "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "vim.leader": "<space>",
+  "vim.showmodename": false,
   "vim.camelCaseMotion.enable": true,
   "vim.normalModeKeyBindings": [
     {
@@ -26,20 +33,28 @@
     {
       "before": ["leader", "/"],
       "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["leader", "."],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "e"],
+      "commands": ["editor.action.marker.next"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["<C-k>"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["<C-j>"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    },
-    {
       "before": ["leader", "/"],
       "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["leader", "."],
+      "commands": ["editor.action.quickFix"]
     }
   ],
   "vim.insertModeKeyBindings": [
@@ -49,6 +64,9 @@
     }
   ],
   "[markdown]": {
+    "editor.quickSuggestions": true,
+    "editor.suggest.showSnippets": false,
+    "editor.wordBasedSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
