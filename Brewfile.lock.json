@@ -5,16 +5,16 @@
         "revision": "93aacde80622e3d658474d9916f7d536c0f3ea86"
       },
       "homebrew/cask": {
-        "revision": "325bcc48af1b7e3108a9187c0b21744c323eebed"
+        "revision": "7f343ef39f42c8e6f9cceda44ac0bbccd886ada9"
       },
       "homebrew/core": {
-        "revision": "e5ca94aa22c6d8b0606aceb119378411ffd1fbda"
+        "revision": "aaf59ee19f7594caa66753a2a9ea4d9f95409561"
       },
       "homebrew/services": {
         "revision": "6e1ec6f5797e7b841a697929ed09fc8756b59cdd"
       },
       "homebrew/cask-versions": {
-        "revision": "6d1d8f1e2aeaa53f3f0dc42c4353cd347eab8ee2"
+        "revision": "9be0fa494bae0754253b5509950e16b188a8ec47"
       },
       "schollz/tap": {
         "revision": "407cb367d6baafb0ccabdb17b4d57969117c3cbc"
@@ -479,7 +479,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "2.6.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e5ca94aa22c6d8b0606aceb119378411ffd1fbda",
+        "Homebrew/homebrew-core": "aaf59ee19f7594caa66753a2a9ea4d9f95409561",
         "CLT": "",
         "Xcode": "12.3",
         "macOS": "11.1"
