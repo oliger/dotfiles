@@ -10,7 +10,7 @@
     "body": [
       "type $2 = {}",
       "",
-      "const ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}} = (props: ${2:Props}) => {",
+      "const ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}} = (props: ${2:$1Props}) => {",
       "  $3",
       "};"
     ]
