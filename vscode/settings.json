@@ -1,23 +1,24 @@
 {
   "breadcrumbs.enabled": false,
+  "editor.cursorStyle": "line",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.formatOnSave": true,
-  "editor.lineHeight": 24,
+  "editor.lineHeight": 26,
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "editor.wordWrap": "off",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "window.autoDetectColorScheme": true,
   "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": null,
-  "workbench.preferredLightColorTheme": "Monochrome Light",
-  "workbench.preferredDarkColorTheme": "Monochrome Dark",
   "workbench.startupEditor": "none",
   "git.enableSmartCommit": true,
   "vim.leader": "<space>",
@@ -61,9 +62,20 @@
       "after": ["<Esc>"]
     }
   ],
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "prettier.resolveGlobalModules": true,
   "[markdown]": {
     "editor.rulers": [],
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     "editor.suggest.showSnippets": false,
     "editor.wordBasedSuggestions": false,
     "editor.wordWrap": "wordWrapColumn",
@@ -74,9 +86,5 @@
   },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "go.useLanguageServer": true,
-  "go.toolsManagement.autoUpdate": true
+  }
 }
