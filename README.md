@@ -12,3 +12,7 @@ git clone git@github.com:oliger/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 scripts/bootstrap
 ```
+
+## References
+
+- https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/
