@@ -2,5 +2,9 @@
 
 set -eu
 
-brew update
+$DOTFILES/homebrew/install.sh 2>&1
+
 $DOTFILES/scripts/install
+
+brew update
+

@@ -33,7 +33,6 @@ link_file () {
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
-
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
     then
       local currentSrc="$(readlink "$dst")"
@@ -97,36 +96,33 @@ link_file () {
 install_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
-  info 'installing dotfiles'
+  info 'install ~/ dotfiles'
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
+  success "installed ~/ dotfiles"
 
-  info 'installing config dotfiles'
+  info 'install ~/.config dotfiles'
   mkdir -p "$HOME/.config"
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.cfglink' -not -path '*.git*')
   do
     dst="$HOME/.config/$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
-}
+  success "installed ~/.config dotfiles"
 
-setup_vscode() {
-  local overwrite_all=false backup_all=false skip_all=false
-
-  src="$DOTFILES_ROOT/vscode"
-  if [ -d $src ] 
-  then
-    dst="$HOME/Library/Application Support/Code/User"
-    mkdir -p "$dst"
-    link_file "$src" "$dst"
-  fi
+  info 'install VSCode settings'
+  dst="$HOME/Library/Application Support/Code/User"
+  mkdir -p "$dst"
+  link_file "$DOTFILES_ROOT/vscode" "$dst"
+  success 'installed VSCode settings'
 }
 
 install_dotfiles
-setup_vscode
+
+$DOTFILES_ROOT/homebrew/install.sh 2>&1
 
 info "Installing dependencies"
 if source bin/dot | while read -r data; do info "$data"; done
