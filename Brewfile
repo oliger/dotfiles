@@ -22,6 +22,7 @@ cask "1password"
 cask "appcleaner"
 cask "blender"
 cask "calibre"
+cask "cleanshot"
 cask "cyberduck"
 cask "discord"
 cask "docker"
@@ -47,6 +48,5 @@ cask "transmission"
 cask "visual-studio-code"
 
 mas "Things3", id: 904280696
-mas "Xcode", id: 497799835
 mas "Wipr", id: 1320666476
 mas "The Unarchiver", id: 425424353
