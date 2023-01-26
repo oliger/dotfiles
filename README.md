@@ -8,9 +8,12 @@
 ## Installation
 
 ```sh
-git clone git@github.com:oliger/dotfiles.git ~/.dotfiles
+# Accept XCode license.
+sudo xcodebuild –license
+
+git clone https://github.com/oliger/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-scripts/bootstrap
+./scripts/bootstrap
 ```
 
 ## References
