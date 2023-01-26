@@ -2,8 +2,8 @@
 
 ## Requirements
 
-- [XCode](developer.apple.com/downloads)
-- [Jetbrains Mono](https://www.jetbrains.com/lp/mono)
+- [XCode](https://developer.apple.com/downloads).
+- [Jetbrains Mono](https://www.jetbrains.com/lp/mono).
 
 ## Installation
 
