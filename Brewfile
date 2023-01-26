@@ -41,11 +41,9 @@ cask "safari-technology-preview"
 cask "slack"
 cask "spectacle"
 cask "spotify"
-cask "steam"
 cask "tableplus"
 cask "telegram"
 cask "transmission"
-cask "virtualbox"
 cask "visual-studio-code"
 
 mas "Things3", id: 904280696
