@@ -4,18 +4,21 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "colima"
+brew "exa"
 brew "fzf"
 brew "git-lfs"
 brew "git"
 brew "go"
 brew "jq"
 brew "jump"
+brew "lima"
 brew "mas"
 brew "neovim", args: ["HEAD"]
 brew "rclone"
+brew "ripgrep"
 brew "wifi-password"
 brew "yt-dlp"
-brew "exa"
 
 cask "1password-cli"
 cask "1password"
@@ -31,8 +34,11 @@ cask "firefox"
 cask "flux"
 cask "geotag"
 cask "github"
+cask "google-chrome-canary"
 cask "google-chrome"
+cask "google-cloud-sdk"
 cask "iina"
+cask "iterm2"
 cask "iterm2"
 cask "keyboard-cleaner"
 cask "microsoft-edge-dev"
@@ -44,9 +50,11 @@ cask "spectacle"
 cask "spotify"
 cask "tableplus"
 cask "telegram"
+cask "tor-browser"
 cask "transmission"
 cask "visual-studio-code"
 
+mas "Pixelmator Pro", id: 1289583905
+mas "The Unarchiver", id: 425424353
 mas "Things3", id: 904280696
 mas "Wipr", id: 1320666476
-mas "The Unarchiver", id: 425424353
