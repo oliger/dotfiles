@@ -6,7 +6,3 @@ cd "$(dirname $0)"/..
 
 # Find installers and run them.
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
-
-# Install formulas from Brewfile
-brew bundle
-
