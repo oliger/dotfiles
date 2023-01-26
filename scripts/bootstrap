@@ -122,14 +122,12 @@ install_dotfiles () {
 
 install_dotfiles
 
-$DOTFILES_ROOT/homebrew/install.sh 2>&1
-
-info "Installing dependencies"
+info "install dependencies"
 if source bin/dot | while read -r data; do info "$data"; done
 then
-  success "Dependencies installed"
+  success "installed dependencies"
 else
-  fail "Error installing dependencies"
+  fail "error installing dependencies"
 fi
 
 info 'Installed!'
