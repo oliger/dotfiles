@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
@@ -54,6 +55,8 @@ cask "telegram"
 cask "tor-browser"
 cask "transmission"
 cask "visual-studio-code"
+
+cask "font-jetbrains-mono"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353
