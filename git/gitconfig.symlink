@@ -1,6 +1,7 @@
 [user]
 	name = Jimmy Oliger
 	email = jimmyoliger@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBfTg+tcF7yPpPYG2mgVXfOSntFvEun9oEZpu5wBp/q5
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
@@ -16,3 +17,9 @@
 	required = true
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
