@@ -6,18 +6,17 @@ endif
 
 call plug#begin(expand('~/.config/nvim/plugged'))
 
-Plug 'tpope/vim-sensible'
-Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'Lokaltog/vim-monotone'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'Lokaltog/vim-monotone'
 
 call plug#end()
 
