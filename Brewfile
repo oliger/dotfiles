@@ -6,6 +6,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 
 brew "colima"
+brew "direnv"
 brew "exa"
 brew "fzf"
 brew "git-lfs"
