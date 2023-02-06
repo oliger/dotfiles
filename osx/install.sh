@@ -43,6 +43,9 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -int 1
 # Open everything in list view.
 defaults write com.apple.Finder FXPreferredViewStyle -string Nlsv
 
+# Show hidden files.
+defaults write com.apple.Finder AppleShowAllFiles true
+
 # Use small icons in sidebar.
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
