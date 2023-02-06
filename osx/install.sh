@@ -9,8 +9,12 @@ defaults write NSGlobalDomain _HIHideMenuBar -int 1
 
 # Hide Dock.
 defaults write com.apple.dock autohide -int 1
+
 # Remove hide delay.
 defaults write com.apple.dock autohide-delay -float 0
+
+# Hide recent apps.
+defaults write com.apple.dock show-recents -int 0
 
 # Disable press-and-hold.
 defaults write -g ApplePressAndHoldEnabled -bool false
