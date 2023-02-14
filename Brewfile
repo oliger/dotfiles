@@ -58,6 +58,11 @@ cask "tor-browser"
 cask "transmission"
 cask "visual-studio-code"
 
+cask "font-ia-writer-duo"
+cask "font-ia-writer-duospace"
+cask "font-ia-writer-mono"
+cask "font-ia-writer-quattro"
+cask "font-ibm-plex-mono"
 cask "font-jetbrains-mono"
 
 mas "Pixelmator Pro", id: 1289583905
