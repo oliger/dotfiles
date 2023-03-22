@@ -16,6 +16,7 @@ brew "jq"
 brew "jump"
 brew "lima"
 brew "mas"
+brew "mkcert"
 brew "neovim", args: ["HEAD"]
 brew "rclone"
 brew "ripgrep"
