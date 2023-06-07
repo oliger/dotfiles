@@ -62,6 +62,7 @@ cask "telegram"
 cask "tor-browser"
 cask "transmission"
 cask "visual-studio-code"
+cask "visual-studio-code-insiders"
 cask "zulu11"
 
 cask "font-ia-writer-duo"
