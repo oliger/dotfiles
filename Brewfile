@@ -63,6 +63,7 @@ cask "tor-browser"
 cask "transmission"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
+cask "zed"
 cask "zulu11"
 
 cask "font-ia-writer-duo"
