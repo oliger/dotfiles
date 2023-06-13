@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "ast-grep"
 brew "colima"
 brew "direnv"
 brew "exa"
