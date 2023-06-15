@@ -25,6 +25,7 @@ brew "neovim", args: ["HEAD"]
 brew "rclone"
 brew "ripgrep"
 brew "rsync"
+brew "starship"
 brew "wifi-password"
 brew "yt-dlp"
 
