@@ -77,6 +77,7 @@ cask "font-ia-writer-mono"
 cask "font-ia-writer-quattro"
 cask "font-ibm-plex-mono"
 cask "font-jetbrains-mono"
+cask "font-symbols-only-nerd-font"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353
