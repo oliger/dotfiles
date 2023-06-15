@@ -93,7 +93,7 @@ link_file () {
   fi
 }
 
-install_dotfiles () {
+link_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
   info 'install ~/ dotfiles'
@@ -112,22 +112,6 @@ install_dotfiles () {
     link_file "$src" "$dst"
   done
   success "installed ~/.config dotfiles"
-
-  info 'install VSCode settings'
-  dst="$HOME/Library/Application Support/Code/User"
-  mkdir -p "$dst"
-  link_file "$DOTFILES_ROOT/vscode" "$dst"
-  success 'installed VSCode settings'
 }
 
-install_dotfiles
-
-info "install dependencies"
-if source bin/dot | while read -r data; do info "$data"; done
-then
-  success "installed dependencies"
-else
-  fail "error installing dependencies"
-fi
-
-info 'Installed!'
+link_dotfiles
