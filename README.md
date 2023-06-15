@@ -16,7 +16,7 @@ sudo xcodebuild –license
 # Install dotfiles.
 git clone https://github.com/oliger/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./scripts/bootstrap
+./scripts/install
 ```
 
 ## References

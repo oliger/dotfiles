@@ -14,3 +14,6 @@ brew bundle --no-lock
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 
 sh -c "$DOTFILES_ROOT/scripts/link"
+
+echo (which fish) | sudo tee -a /etc/shells
+chsh -s (which fish)
