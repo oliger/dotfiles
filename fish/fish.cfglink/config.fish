@@ -19,4 +19,4 @@ end
 
 # Load fish functions and completions defined in modules.
 set fish_function_path $fish_function_path $DOTFILES/*/functions
-set fish_complete_path $fish_function_path $DOTFILES/*/completions
+set fish_complete_path $fish_complete_path $DOTFILES/*/completions
