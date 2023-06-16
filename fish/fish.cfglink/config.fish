@@ -17,5 +17,6 @@ for file in (string match --invert --regex $env_file_regex $fish_files)
   source $file
 end
 
-# Load fish functions defined in modules.
+# Load fish functions and completions defined in modules.
 set fish_function_path $fish_function_path $DOTFILES/*/functions
+set fish_complete_path $fish_function_path $DOTFILES/*/completions
