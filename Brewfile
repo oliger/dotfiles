@@ -11,6 +11,7 @@ brew "colima"
 brew "direnv"
 brew "exa"
 brew "ffmpeg"
+brew "fish"
 brew "fzf"
 brew "git-lfs"
 brew "git"
@@ -24,6 +25,7 @@ brew "neovim", args: ["HEAD"]
 brew "rclone"
 brew "ripgrep"
 brew "rsync"
+brew "starship"
 brew "wifi-password"
 brew "yt-dlp"
 
@@ -75,6 +77,7 @@ cask "font-ia-writer-mono"
 cask "font-ia-writer-quattro"
 cask "font-ibm-plex-mono"
 cask "font-jetbrains-mono"
+cask "font-symbols-only-nerd-font"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353

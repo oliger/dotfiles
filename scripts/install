@@ -4,5 +4,16 @@ set -eu
 
 cd "$(dirname $0)"/..
 
-# Find installers and run them.
+DOTFILES_ROOT=$(pwd -P)
+
+$DOTFILES_ROOT/homebrew/install.sh 2>&1
+eval $(/opt/homebrew/bin/brew shellenv)
+
+brew bundle --no-lock
+
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+sh -c "$DOTFILES_ROOT/scripts/link"
+
+echo (which fish) | sudo tee -a /etc/shells
+chsh -s (which fish)

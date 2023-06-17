@@ -1,0 +1,93 @@
+add_newline = false
+
+[character]
+success_symbol = "\uf460"
+error_symbol = "[\uf460](bold red)"
+vimcmd_symbol = "[\uf460](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[bun]
+symbol = "bun "
+
+[c]
+symbol = "C "
+
+[cmake]
+symbol = "cmake "
+
+[deno]
+symbol = "deno "
+
+[directory]
+read_only = " ro"
+
+[docker_context]
+symbol = "docker "
+
+[git_branch]
+symbol = "\uf418 "
+
+[golang]
+symbol = "go "
+
+[lua]
+symbol = "lua "
+
+[nodejs]
+symbol = "\ue24f "
+
+[memory_usage]
+symbol = "memory "
+
+[nix_shell]
+symbol = "nix "
+
+[package]
+disabled = true
+
+[python]
+symbol = "py "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = "rs "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "swift "
+
+[terraform]
+symbol = "terraform "
+
+[zig]
+symbol = "zig "
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+
+[[battery.display]]
+threshold = 10
